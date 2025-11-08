@@ -1,0 +1,56 @@
+#include <iostream>
+using namespace std;
+
+class Complex
+{
+    int a, b;   
+public:
+    Complex()    
+    {
+        a = 0;
+        b = 0;
+    }
+
+    void getValue()
+    {
+        cout << "Enter the two numbers: ";
+        cin >> a >> b;
+    }
+
+    void operator ++()
+    {
+        ++a;
+        ++b;
+    }
+
+    void operator --()   
+    {
+        --a;
+        --b;
+    }
+
+    void display()
+    {
+        cout << "a = " << a << "\tb = " << b << endl;
+    }
+};
+
+int main()
+{
+    Complex c1;
+
+    c1.getValue();
+
+    cout << "\nBefore increment:\n";
+    c1.display();
+
+    ++c1;   
+    cout << "\nAfter increment:\n";
+    c1.display();
+
+    --c1;   
+    cout << "\nAfter decrement:\n";
+    c1.display();
+
+    return 0;
+}
