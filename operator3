@@ -1,0 +1,50 @@
+#include <iostream>
+using namespace std;
+
+class Time {
+private:
+    int hour, min, sec;
+
+public:
+    Time() {
+        hour = 0;
+        min = 0;
+        sec = 0;
+    }
+
+    Time(int h, int m, int s) {
+        hour = h;
+        min = m;
+        sec = s;
+    }
+    void display() {
+        cout << hour << " : " << min << " : " << sec << endl;
+    }
+    bool operator > (Time t) {
+        if (hour > t.hour)
+            return true;
+        else if (hour == t.hour && min > t.min)
+            return true;
+        else if (hour == t.hour && min == t.min && sec > t.sec)
+            return true;
+        else
+            return false;
+    }
+};
+
+int main() {
+    Time t1(3, 45, 20);
+    Time t2(2, 50, 30);
+
+    cout << "Time 1 = ";
+    t1.display();
+    cout << "Time 2 = ";
+    t2.display();
+
+    if (t1 > t2)
+        cout << "Time 1 is greater than Time 2" << endl;
+    else
+        cout << "Time 2 is greater than or equal to Time 1" << endl;
+
+    return 0;
+}
