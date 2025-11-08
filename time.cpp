@@ -6,35 +6,35 @@ class Time
     int hours,minutes;
     public:
     void gettime();
-    void addtime(Time x1, Time x2);
-    void displaytime();
+    void addtime(Time t1, Time t2);
+    void display();
 };
 void Time::gettime()
 {
-    cout<<"Enter the hours";
+    cout<<"Enter Hours:";
     cin>>hours;
-    cout<<"Enter the minutes";
+    cout<<"Enter Minutes:";
     cin>>minutes;
 }
-void Time::addtime(Time x1, Time x2)
+void Time::addtime(Time t1, Time t2)
 {
-    minutes=x1minutes+x2minutes;
+    minutes=t1.minutes+t2.minutes;
     hours=minutes/60;
     minutes=minutes%60;
-    hours=hours+x1hours+x2hours
+    hours=hours+t1.hours+t2.hours;
 }
-void Time::displaytime()
+void Time::display()
 {
-    cout<<\n "hours:<<"hours;
-    cout<<\n "minutes:"<<minutes;
+    cout<<"\n Hours:"<<hours;
+    cout<<"\n Minutes:"<<minutes;
 }
 int main()
 {
-    time t1,t2,t3
-    t1.gettime();
-    t2.grttime();
-    t3.addtime(t1+t2);
-    t1.displaytime();
-    t2.displaytime();
-    t3.displaytime();
+    Time T1,T2,T3;
+    T1.gettime();
+    T2.gettime();
+    T3.addtime(T1,T2);
+    T1.display();
+    T2.display();
+    T3.display();
 }
